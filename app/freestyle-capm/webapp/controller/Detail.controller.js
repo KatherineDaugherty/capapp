@@ -12,7 +12,7 @@ sap.ui.define([
 		},
 		_onObjectMatched: function (oEvent) {
 			this.getView().bindElement({
-				path : "/Employees(ID=" + window.decodeURIComponent(oEvent.getParameter("arguments").employeePath)+",IsActiveEntity=true)"
+				path : "/Employees(ID=" + window.decodeURIComponent(oEvent.getParameter("arguments").employeePath)+ ")"
 				
 			});
 			console.log('in object', window.decodeURIComponent(oEvent.getParameter("arguments").employeePath));
