@@ -9,6 +9,7 @@ xmlns:w="sap.ui.integration.widgets"
 	height="100%"
 xmlns:mvc="sap.ui.core.mvc" >
 
+
     <Page
 		id="idPage"
 		title=" Details Page"
@@ -32,29 +33,67 @@ xmlns:mvc="sap.ui.core.mvc" >
 				text="Delete Employee" 
 				icon="sap-icon://delete" 
 				press="DeleteEmployee"/>          
-        
 		</headerContent>
-		<content>
+<content>
+<HeaderContainer>
+<layout:HorizontalLayout>
+		<layout:VerticalLayout class="sapUiMediumMarginEnd">
+			<Label text="Department" design="Bold"/>
+			<Input
+				value="{department}"
+				valueLiveUpdate="true"
+				liveChange="onInputChange"/>
+			<Label text="Title" design="Bold"/>
+			<Input
+				value="{title}"
+				valueLiveUpdate="true"
+				liveChange="onInputChange"/>
+			<Label text="Role" design="Bold"/>
+			<Input
+				value="{role}"
+				valueLiveUpdate="true"
+				liveChange="onInputChange"/>
+		</layout:VerticalLayout>
+		<layout:VerticalLayout class="sapUiMediumMarginEnd">
+			<Label text="Direct Report" design="Bold"/>
+			<Input
+				value="{directReport}"
+				valueLiveUpdate="true"
+				liveChange="onInputChange"/>
+			<Label text="Start Date" design="Bold"/>
+			<Input
+				value="{startDate}"
+				valueLiveUpdate="true"
+				liveChange="onInputChange"/>
+			<Label text="Email" design="Bold"/>
+			<Input
+				value="{email}"
+				valueLiveUpdate="true"
+				liveChange="onInputChange"/>
+		</layout:VerticalLayout>
+	</layout:HorizontalLayout>
+</HeaderContainer>
+				
 
-			<ObjectHeader
+
+
+			<!-- <ObjectHeader
 				icon="test-resources/sap/m/images/Woman_04.png"
 				iconDensityAware="false"
 				iconAlt="{name}"
 				imageShape="Circle"
 				responsive="true"
 				title="{name}"
-				backgroundDesign="Solid">
-				<attributes>
-					<ObjectAttribute title="{email}" />
+				backgroundDesign="Solid"> -->
+				
+				<!-- <attributes> -->
+					<!-- <ObjectAttribute title="{email}" />
 					<ObjectAttribute title="{role}"  />
 					<ObjectAttribute title="{industry}"  />
 					<ObjectAttribute title="{directReport}" />
-					<ObjectAttribute title="{startDate}"  />
-
-					
-
-				</attributes>
-			</ObjectHeader>
+					<ObjectAttribute title="{startDate}"  /> -->
+				<!-- </attributes> -->
+			<!-- </ObjectHeader> -->
 
 		<ScrollContainer height="100%" width="100%"	vertical="true">
 				<f:GridContainer

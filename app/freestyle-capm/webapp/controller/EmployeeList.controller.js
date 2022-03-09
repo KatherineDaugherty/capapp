@@ -10,19 +10,13 @@ sap.ui.define([
         },
         onAddEmployee: function () {
             //   console.log('clicked Add Employee')
-            var employeeList = this.byId("idEmployeeTable"),
-                employeeBinding = employeeList.getBinding("items"),
-                oContext = employeeBinding.create({
-                    // "ID": "",
-                    "name": "",
-                    "department": "",
-                    "title": "",
-                    "role": "",
-                    "industry": "",
-                    "directReport": "",
-                    "startDate": "1997-12-12",
-                    "email": ""
-                });
+            var employeeList = this.byId("idEmployeeTable")
+            var employeeBinding = employeeList.getBinding("items")
+            var oContext = employeeBinding.create({});
+                oContext.created()
+
+
+
             console.log('employeeBinding', employeeBinding);
             console.log('oContext', oContext);
 

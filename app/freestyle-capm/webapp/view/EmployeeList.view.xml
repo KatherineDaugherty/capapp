@@ -62,7 +62,7 @@
                 press=".onPress"
                 type="Navigation"> 
                 <cells>
-                    <ObjectIdentifier title="{name}" text="{role}"/>
+                    <ObjectIdentifier title="{ID}" text="{role}"/>
                         <Text text="{department}"/>
                         <Text text="{industry}"/>
                         <Text text="{startDate}"/>
