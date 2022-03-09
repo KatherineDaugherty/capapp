@@ -4,9 +4,7 @@
 	xmlns:f="sap.f"
 	xmlns:card="sap.f.cards"
 	xmlns:layout="sap.ui.layout"
-	xmlns:m="sap.m"
-
-	xmlns:w="sap.ui.integration.widgets"
+xmlns:w="sap.ui.integration.widgets"
 	displayBlock="true"
 	height="100%"
 xmlns:mvc="sap.ui.core.mvc" >
@@ -18,10 +16,26 @@ xmlns:mvc="sap.ui.core.mvc" >
 		navButtonPress=".onNavBack"
 		icon = "sap-icon://add-favorite">
 		<headerContent>
-			<Button id="editEmployeeButton" icon="sap-icon://edit" text="Edit Employee" press=".onEditEmployee"/>   
-			<Button id="DeleteEmployeeBtn"  icon="sap-icon://delete" text="Delete Employee" press=".onDeleteEmployee"/>          
+			<Button 
+				id="skillButton" 
+				icon="sap-icon://add-favorite" 
+				tooltip="Add Skills" 
+				text="Add Employee Skillz" 
+				press= "addSkill"/>
+			<Button 
+				id="editEmployeeButton" 
+				icon="sap-icon://edit" 
+				text="Edit Employee" 
+				press="EditEmployee"/>   
+			<Button 
+				id="DeleteEmployeeBtn" 
+				text="Delete Employee" 
+				icon="sap-icon://delete" 
+				press="DeleteEmployee"/>          
+        
 		</headerContent>
 		<content>
+
 			<ObjectHeader
 				icon="test-resources/sap/m/images/Woman_04.png"
 				iconDensityAware="false"
@@ -31,63 +45,28 @@ xmlns:mvc="sap.ui.core.mvc" >
 				title="{name}"
 				backgroundDesign="Solid">
 				<attributes>
-					<ObjectAttribute title="Email" text="{email}" />
-					<ObjectAttribute title="Role" text="{role}" />
-					<ObjectAttribute title="Industry" text="{industry}" />
-					<ObjectAttribute title="Direct Report" text="{directReport}" />
-					<ObjectAttribute title="Start Date" text="{startDate}" />
+					<ObjectAttribute title="{email}" />
+					<ObjectAttribute title="{role}"  />
+					<ObjectAttribute title="{industry}"  />
+					<ObjectAttribute title="{directReport}" />
+					<ObjectAttribute title="{startDate}"  />
+
+					
+
 				</attributes>
 			</ObjectHeader>
 
-			<ScrollContainer height="100%" width="100%"	vertical="true">
-			<Table 
-				id="skillsTable"
-				autoPopinMode="true"
-				contextualWidth="Auto"
-				growing="true"
-				items="{skills}">							
-			<headerToolbar>
-				<Toolbar>
-					<Title text="title"/>
-					<ToolbarSpacer/>      
-						<Button id="skillButton" icon="sap-icon://add-favorite" tooltip="Add Skills" text="Add Employee Skillz" press= "addSkill"/>            
-				</Toolbar>
-			</headerToolbar>
-					<columns>
-						<Column width="12rem">
-							<Text text="Name"/>
-						</Column>
-						<Column width="12rem">
-							<Text text="Comfort Level"/>
-						</Column>
-						<Column width="12rem">
-							<Text text="Date Acquired"/>
-						</Column>
-						<Column width="12rem">
-							<Text text="Renewal"/>
-						</Column>
-					</columns>
-					<items>
-						<ColumnListItem 
-							vAlign="Middle"
-							press=".onPress"
-							type="Navigation"> 
-							<cells>
-								<ObjectIdentifier title="dateAcquired" text="dateAcquired"/>
-									<Text text="{dateAcquired}"/>
-									<Text text="{dateAcquired}"/>
-									<Text text="{dateAcquired}"/>
-									<Text text="{dateAcquired}"/>
-							</cells>
-						</ColumnListItem>
-					</items>
-				</Table>
-
-				<!-- <f:GridContainer
+		<ScrollContainer height="100%" width="100%"	vertical="true">
+				<f:GridContainer
 					id="grid1"
 					class="sapUiSmallMargin"
 					snapToRow="true"
-					items="{skills}">
+					items="{
+                    path: 'skills',
+					parameters : {
+							expand : 'skills'
+						}
+                }">
 					<f:layout>
 						<f:GridContainerSettings rowSize="80px" columnSize="80px" gap="18px" />
 					</f:layout>
@@ -104,21 +83,21 @@ xmlns:mvc="sap.ui.core.mvc" >
 						</layoutData>
 						<TileContent>
 						<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
-							<m:VBox>
-								<m:Label text="Date Acquired"/>
-								<m:Label text="{dateAcquired}"/>
-								<m:Label text="Comfort Level"/>
-								<m:ProgressIndicator 
+							<VBox>
+								<Label text="Date Acquired"/>
+								<Label text="{dateAcquired}"/>
+								<Label text="Comfort Level"/>
+								<ProgressIndicator 
 									percentValue="{comfortLevel}"
 									state="Success"
 									displayValue="{comfortLevel}" />
-							</m:VBox>
+							</VBox>
 						</layout:VerticalLayout>							
 						</TileContent>
 					</GenericTile>
 					</f:items>		
-				</f:GridContainer> -->
-			</ScrollContainer>
+				</f:GridContainer>
+			</ScrollContainer> 
 		</content>
 	</Page>
 
