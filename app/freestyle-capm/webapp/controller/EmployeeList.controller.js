@@ -14,9 +14,7 @@ sap.ui.define([
             var employeeBinding = employeeList.getBinding("items")
             var oContext = employeeBinding.create({});
                 oContext.created()
-
-
-
+                
             console.log('employeeBinding', employeeBinding);
             console.log('oContext', oContext);
 

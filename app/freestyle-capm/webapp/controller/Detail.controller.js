@@ -12,7 +12,10 @@ sap.ui.define([
 		},
 		_onObjectMatched: function (oEvent) {
 			this.getView().bindElement({
-				path : "/Employees(ID=" + window.decodeURIComponent(oEvent.getParameter("arguments").employeePath)+ ")"
+				path : "/Employees(ID=" + window.decodeURIComponent(oEvent.getParameter("arguments").employeePath)+ ")",
+				parameters : {
+					"$$updateGroupId" : 'employeeGroup'
+				}
 				
 			});
 			console.log('in object', window.decodeURIComponent(oEvent.getParameter("arguments").employeePath));
@@ -39,8 +42,8 @@ sap.ui.define([
 		onDeleteEmployee: function () {
 			console.log('pressed delete employee');
 		},
-		onSaveEmployeeEdit: function () {
-			this.byId("editEmployeeDialog").close();
+		onSaveEmployee: function () {
+			this.getView().getModel().submitBatch("employeeGroup");
 		},
 		onAddSkill: function () {
 			console.log('clicked add Skill');
