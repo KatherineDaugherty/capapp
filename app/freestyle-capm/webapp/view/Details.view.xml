@@ -31,7 +31,7 @@
 						<Label text="Direct Report" design="Bold" />
 						<Input value="{directReport}" valueLiveUpdate="true" liveChange="onInputChange" />
 						<Label text="Start Date" design="Bold" />
-						<Input value="{startDate}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<DatePicker value="{startDate}" valueFormat="yyyy-MM-dd" change="handleChange" valueLiveUpdate="true" liveChange="onInputChange" />
 						<Label text="Email" design="Bold" />
 						<Input value="{email}" valueLiveUpdate="true" liveChange="onInputChange" />
 					</layout:VerticalLayout>

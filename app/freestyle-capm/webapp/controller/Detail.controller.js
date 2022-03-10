@@ -1,20 +1,22 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
+	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/routing/History",
-	"sap/ui/core/Fragment"
+	"sap/ui/core/Fragment",
+	"sap/ui/core/Core"
 
-], function (Controller, History, Fragment) {
+], function (Controller, JSONModel, History, Fragment, Core) {
 	"use strict";
 	return Controller.extend("freestyle.capm.controller.Detail", {
 		onInit: function () {
 			var oRouter = this.getOwnerComponent().getRouter();
 			oRouter.getRoute("detail").attachPatternMatched(this._onObjectMatched, this);
 
-			// oViewModel = new JSONModel({
-			// 	editMode : false
-			// });
-			// this.setModel(oViewModel, "detailView");
-			// this.oEditAction = this.byId("editAction");
+			var oViewModel = new JSONModel({
+				editMode : false
+			});
+			this.getView().setModel(oViewModel, "detailView");
+			this.oEditAction = this.byId("editAction");
 
 		},
 		_onObjectMatched: function (oEvent) {
