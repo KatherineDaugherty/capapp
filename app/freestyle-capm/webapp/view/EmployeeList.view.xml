@@ -1,52 +1,36 @@
-<mvc:View
-   controllerName="freestyle.capm.controller.employeeList"
-   xmlns="sap.m"
-   xmlns:f="sap.f"
-   xmlns:mvc="sap.ui.core.mvc">
+<mvc:View controllerName="freestyle.capm.controller.employeeList" xmlns="sap.m" xmlns:f="sap.f" xmlns:mvc="sap.ui.core.mvc">
 
-    <Table 
-        id="idEmployeeTable"
-        autoPopinMode="true"
-        contextualWidth="Auto"
-        growing="true"
-        items="{/Employees}">			
-                
+    <Table id="idEmployeeTable" autoPopinMode="true" contextualWidth="Auto" growing="true" items="{/Employees}">
+
         <headerToolbar>
             <Toolbar>
-                <Title text="{i18n>employeeListTitle}"/>
-                <ToolbarSpacer/>      
-                <Button 
-                    width="150px" 
-                    icon="sap-icon://add" 
-                    press=".onAddEmployee" 
-                    text="Add Employee"/> 
+                <Title text="{i18n>employeeListTitle}" />
+                <ToolbarSpacer />
+                <Button width="150px" icon="sap-icon://add" press=".onAddEmployee" text="Add Employee" />
             </Toolbar>
         </headerToolbar>
 
         <columns>
             <Column width="12rem">
-                <Text text="Name"/>
+                <Text text="Name" />
             </Column>
             <Column width="12rem">
-                <Text text="Department"/>
+                <Text text="Department" />
             </Column>
             <Column width="12rem">
-                <Text text="Industry"/>
+                <Text text="Industry" />
             </Column>
             <Column width="12rem">
-                <Text text="Start Date"/>
+                <Text text="Start Date" />
             </Column>
         </columns>
         <items>
-            <ColumnListItem 
-                vAlign="Middle"
-                press=".onPress"
-                type="Navigation"> 
+            <ColumnListItem vAlign="Middle" press=".onPress" type="Navigation">
                 <cells>
-                    <ObjectIdentifier title="{ID}" text="{role}"/>
-                        <Text text="{department}"/>
-                        <Text text="{industry}"/>
-                        <Text text="{startDate}"/>
+                    <ObjectIdentifier title="{name}" text="{role}" />
+                    <Text text="{department}" />
+                    <Text text="{industry}" />
+                    <Text text="{startDate}" />
                 </cells>
             </ColumnListItem>
         </items>

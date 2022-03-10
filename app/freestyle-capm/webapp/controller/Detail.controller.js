@@ -9,6 +9,13 @@ sap.ui.define([
 		onInit: function () {
 			var oRouter = this.getOwnerComponent().getRouter();
 			oRouter.getRoute("detail").attachPatternMatched(this._onObjectMatched, this);
+
+			// oViewModel = new JSONModel({
+			// 	editMode : false
+			// });
+			// this.setModel(oViewModel, "detailView");
+			// this.oEditAction = this.byId("editAction");
+
 		},
 		_onObjectMatched: function (oEvent) {
 			this.getView().bindElement({
@@ -32,20 +39,31 @@ sap.ui.define([
 			}
 		},
 		onEditEmployee: function (oEvent) {
+			// oViewModel = this.getModel("detailView"),
+			// oViewModel.setProperty("/editMode", true),
 			console.log('pressed onEditEmployee');
 		},
-		onCancelEditEmployee: function () {
-			console.log('pressed onCancelEdit Employee');
+		onResetChanges: function () {
+			// oViewModel = this.getModel("detailView"),
+			// oViewModel.setProperty("/editMode", false),
+			this.getView().getModel().resetChanges('employeeGroup');
+
+			console.log('pressed onCancelChanges');
 		},
 		
-		onDeleteEmployee: function () {
-			console.log('pressed delete employee');
-		},
+		// onDeleteEmployee: function () {
+		// 	console.log('pressed delete employee');
+		// },
 		onSaveEmployee: function () {
 			this.getView().getModel().submitBatch("employeeGroup");
+			console.log('pressed Save');
+
+
+			// oViewModel = this.getModel("detailView"),
+			// oViewModel.setProperty("/editMode", false)
 		},
-		onAddSkill: function () {
-			console.log('clicked add Skill');
-		}
+		// onAddSkill: function () {
+		// 	console.log('clicked add Skill');
+		// }
 	});
 });

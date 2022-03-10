@@ -1,99 +1,45 @@
-<mvc:View
-	controllerName="freestyle.capm.controller.Detail"
-	xmlns="sap.m"
-	xmlns:f="sap.f"
-	xmlns:card="sap.f.cards"
-	xmlns:layout="sap.ui.layout"
-xmlns:w="sap.ui.integration.widgets"
-	displayBlock="true"
-	height="100%"
-xmlns:mvc="sap.ui.core.mvc" >
+<mvc:View controllerName="freestyle.capm.controller.Detail" xmlns="sap.m" xmlns:f="sap.f" xmlns:card="sap.f.cards" xmlns:layout="sap.ui.layout" xmlns:w="sap.ui.integration.widgets" displayBlock="true" height="100%" xmlns:mvc="sap.ui.core.mvc">
 
 
-    <Page
-		id="idPage"
-		title=" Details Page"
-		floatingFooter="true"
-        showNavButton="true"
-		navButtonPress=".onNavBack"
-		icon = "sap-icon://add-favorite">
+	<Page id="idPage" title=" Details Page" floatingFooter="true" showNavButton="true" navButtonPress=".onNavBack" icon="sap-icon://add-favorite">
 		<headerContent>
-			<Button 
-				id="editEmployeeButton" 
-				icon="sap-icon://edit" 
-				text="Edit Employee" 
-				press=".onEditEmployee"/>   
-			<Button 
+			<Button id="editEmployeeButton" icon="sap-icon://edit" text="Edit Employee" press=".onEditEmployee" />
+			<!-- <Button 
 				id="DeleteEmployeeBtn" 
 				text="Delete Employee" 
 				icon="sap-icon://delete" 
-				press=".onDeleteEmployee"/> 
-			<Button
-				id="saveButton"
-				type="Emphasized"
-				text="{i18n>saveButtonText}"
-				press=".onSaveEmployee"/>
-			<Button
-				id="doneButton"
-				text="{i18n>cancelButtonText}"
-				press=".onResetChanges"/>            
+				press=".onDeleteEmployee"/>  -->
+			<Button id="saveButton" type="Emphasized" text="{i18n>saveButtonText}" press=".onSaveEmployee" />
+			<Button id="resetButton" text="{i18n>cancelButtonText}" press=".onResetChanges" />
 		</headerContent>
-<content>
-<HeaderContainer>
-<layout:HorizontalLayout>
-		<layout:VerticalLayout class="sapUiMediumMarginEnd">
-			<Label text="Name" design="Bold"/>
-			<Input
-				value="{name}"
-				valueLiveUpdate="true"
-				liveChange="onInputChange"/>
-			<Label text="Department" design="Bold"/>
-			<Input
-				value="{department}"
-				valueLiveUpdate="true"
-				liveChange="onInputChange"/>
-			<Label text="Title" design="Bold"/>
-			<Input
-				value="{title}"
-				valueLiveUpdate="true"
-				liveChange="onInputChange"/>
-			<Label text="Role" design="Bold"/>
-			<Input
-				value="{role}"
-				valueLiveUpdate="true"
-				liveChange="onInputChange"/>
-		</layout:VerticalLayout>
-		<layout:VerticalLayout class="sapUiMediumMarginEnd">
-			<Label text="Industry" design="Bold"/>
-			<Input
-				value="{industry}"
-				valueLiveUpdate="true"
-				liveChange="onInputChange"/>
-			<Label text="Direct Report" design="Bold"/>
-			<Input
-				value="{directReport}"
-				valueLiveUpdate="true"
-				liveChange="onInputChange"/>
-			<Label text="Start Date" design="Bold"/>
-			<Input
-				value="{startDate}"
-				valueLiveUpdate="true"
-				liveChange="onInputChange"/>
-			<Label text="Email" design="Bold"/>
-			<Input
-				value="{email}"
-				valueLiveUpdate="true"
-				liveChange="onInputChange"/>
-		</layout:VerticalLayout>
-	</layout:HorizontalLayout>
-</HeaderContainer>
-					
-		<ScrollContainer height="100%" width="100%"	vertical="true">
-				<f:GridContainer
-					id="grid1"
-					class="sapUiSmallMargin"
-					snapToRow="true"
-					items="{
+		<content>
+			<HeaderContainer>
+				<layout:HorizontalLayout>
+					<layout:VerticalLayout class="sapUiMediumMarginEnd">
+						<Label text="Name" design="Bold" />
+						<Input value="{name}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Label text="Department" design="Bold" />
+						<Input value="{department}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Label text="Title" design="Bold" />
+						<Input value="{title}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Label text="Role" design="Bold" />
+						<Input value="{role}" valueLiveUpdate="true" liveChange="onInputChange" />
+					</layout:VerticalLayout>
+					<layout:VerticalLayout class="sapUiMediumMarginEnd">
+						<Label text="Industry" design="Bold" />
+						<Input value="{industry}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Label text="Direct Report" design="Bold" />
+						<Input value="{directReport}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Label text="Start Date" design="Bold" />
+						<Input value="{startDate}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Label text="Email" design="Bold" />
+						<Input value="{email}" valueLiveUpdate="true" liveChange="onInputChange" />
+					</layout:VerticalLayout>
+				</layout:HorizontalLayout>
+			</HeaderContainer>
+
+			<ScrollContainer height="100%" width="100%" vertical="true">
+				<f:GridContainer id="grid1" class="sapUiSmallMargin" snapToRow="true" items="{
                     path: 'skills',
 					parameters : {
 							expand : 'skills'
@@ -106,28 +52,23 @@ xmlns:mvc="sap.ui.core.mvc" >
 						<f:GridContainerSettings rowSize="70px" columnSize="70px" gap="8px" />
 					</f:layoutXS>
 
-					<f:items >
-					<GenericTile 
-						header="{skill/skill}" 
-						subheader="{skill/type}">
-						<layoutData>
-							<f:GridContainerItemLayoutData minRows="2" columns="2" />
-						</layoutData>
-						<TileContent>
-						<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
-							<VBox>
-								<Label text="Date Acquired"/>
-								<Label text="{dateAcquired}"/>
-								<Label text="Comfort Level"/>
-								<ProgressIndicator 
-									percentValue="{comfortLevel}"
-									state="Success"
-									displayValue="{comfortLevel}" />
-							</VBox>
-						</layout:VerticalLayout>							
-						</TileContent>
-					</GenericTile>
-					</f:items>		
+					<f:items>
+						<GenericTile header="{skill/skill}" subheader="{skill/type}">
+							<layoutData>
+								<f:GridContainerItemLayoutData minRows="2" columns="2" />
+							</layoutData>
+							<TileContent>
+								<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+									<VBox>
+										<Label text="Date Acquired" />
+										<Label text="{dateAcquired}" />
+										<Label text="Comfort Level" />
+										<ProgressIndicator percentValue="{comfortLevel}" state="Success" displayValue="{comfortLevel}" />
+									</VBox>
+								</layout:VerticalLayout>
+							</TileContent>
+						</GenericTile>
+					</f:items>
 				</f:GridContainer>
 				<!-- <Button 
 				id="skillButton" 
@@ -135,7 +76,7 @@ xmlns:mvc="sap.ui.core.mvc" >
 				tooltip="Add Skills" 
 				text="Add Employee Skillz" 
 				press= "addSkill"/> -->
-			</ScrollContainer> 
+			</ScrollContainer>
 
 			<!-- <footer>
 			<OverflowToolbar>

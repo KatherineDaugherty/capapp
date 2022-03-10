@@ -13,8 +13,13 @@ sap.ui.define([
             var employeeList = this.byId("idEmployeeTable")
             var employeeBinding = employeeList.getBinding("items")
             var oContext = employeeBinding.create({});
-                oContext.created()
-                
+            oContext.created().then(function (oEvent) {
+                oRouter.navTo("detail", {
+                    employeePath: window.encodeURIComponent((oEvent.getSource().getBindingContext().getProperty("ID")))
+                });
+            }, function (oError) {
+            });
+
             console.log('employeeBinding', employeeBinding);
             console.log('oContext', oContext);
 
@@ -25,8 +30,8 @@ sap.ui.define([
                     return true;
                 }
             });
-        },  
-        
+        },
+
         //NAVIGATION 
         onPress: function (oEvent) {
             var oItem = oEvent.getSource();
