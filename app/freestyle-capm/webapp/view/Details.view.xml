@@ -42,6 +42,11 @@ xmlns:mvc="sap.ui.core.mvc" >
 <HeaderContainer>
 <layout:HorizontalLayout>
 		<layout:VerticalLayout class="sapUiMediumMarginEnd">
+			<Label text="Name" design="Bold"/>
+			<Input
+				value="{name}"
+				valueLiveUpdate="true"
+				liveChange="onInputChange"/>
 			<Label text="Department" design="Bold"/>
 			<Input
 				value="{department}"
@@ -59,6 +64,11 @@ xmlns:mvc="sap.ui.core.mvc" >
 				liveChange="onInputChange"/>
 		</layout:VerticalLayout>
 		<layout:VerticalLayout class="sapUiMediumMarginEnd">
+			<Label text="Industry" design="Bold"/>
+			<Input
+				value="{industry}"
+				valueLiveUpdate="true"
+				liveChange="onInputChange"/>
 			<Label text="Direct Report" design="Bold"/>
 			<Input
 				value="{directReport}"

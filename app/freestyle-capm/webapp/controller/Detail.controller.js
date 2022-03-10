@@ -15,8 +15,7 @@ sap.ui.define([
 				path : "/Employees(ID=" + window.decodeURIComponent(oEvent.getParameter("arguments").employeePath)+ ")",
 				parameters : {
 					"$$updateGroupId" : 'employeeGroup'
-				}
-				
+				}	
 			});
 			console.log('in object', window.decodeURIComponent(oEvent.getParameter("arguments").employeePath));
 
