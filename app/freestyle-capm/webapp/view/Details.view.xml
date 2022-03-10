@@ -13,26 +13,30 @@ xmlns:mvc="sap.ui.core.mvc" >
     <Page
 		id="idPage"
 		title=" Details Page"
+		floatingFooter="true"
         showNavButton="true"
 		navButtonPress=".onNavBack"
 		icon = "sap-icon://add-favorite">
 		<headerContent>
 			<Button 
-				id="skillButton" 
-				icon="sap-icon://add-favorite" 
-				tooltip="Add Skills" 
-				text="Add Employee Skillz" 
-				press= "addSkill"/>
-			<Button 
 				id="editEmployeeButton" 
 				icon="sap-icon://edit" 
 				text="Edit Employee" 
-				press="EditEmployee"/>   
+				press=".onEditEmployee"/>   
 			<Button 
 				id="DeleteEmployeeBtn" 
 				text="Delete Employee" 
 				icon="sap-icon://delete" 
-				press="DeleteEmployee"/>          
+				press=".onDeleteEmployee"/> 
+			<Button
+				id="saveButton"
+				type="Emphasized"
+				text="{i18n>saveButtonText}"
+				press=".onSaveEmployee"/>
+			<Button
+				id="doneButton"
+				text="{i18n>cancelButtonText}"
+				press=".onResetChanges"/>            
 		</headerContent>
 <content>
 <HeaderContainer>
@@ -73,28 +77,7 @@ xmlns:mvc="sap.ui.core.mvc" >
 		</layout:VerticalLayout>
 	</layout:HorizontalLayout>
 </HeaderContainer>
-				
-
-
-
-			<!-- <ObjectHeader
-				icon="test-resources/sap/m/images/Woman_04.png"
-				iconDensityAware="false"
-				iconAlt="{name}"
-				imageShape="Circle"
-				responsive="true"
-				title="{name}"
-				backgroundDesign="Solid"> -->
-				
-				<!-- <attributes> -->
-					<!-- <ObjectAttribute title="{email}" />
-					<ObjectAttribute title="{role}"  />
-					<ObjectAttribute title="{industry}"  />
-					<ObjectAttribute title="{directReport}" />
-					<ObjectAttribute title="{startDate}"  /> -->
-				<!-- </attributes> -->
-			<!-- </ObjectHeader> -->
-
+					
 		<ScrollContainer height="100%" width="100%"	vertical="true">
 				<f:GridContainer
 					id="grid1"
@@ -136,7 +119,22 @@ xmlns:mvc="sap.ui.core.mvc" >
 					</GenericTile>
 					</f:items>		
 				</f:GridContainer>
+				<!-- <Button 
+				id="skillButton" 
+				icon="sap-icon://add-favorite" 
+				tooltip="Add Skills" 
+				text="Add Employee Skillz" 
+				press= "addSkill"/> -->
 			</ScrollContainer> 
+
+			<!-- <footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button type="Accept" text="Save"/>
+				<Button type="Reject" text="Cancel"/>
+			</OverflowToolbar>
+		</footer> -->
+
 		</content>
 	</Page>
 

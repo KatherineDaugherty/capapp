@@ -28,13 +28,7 @@ sap.ui.define([
                 }
             });
         },  
-        onSave : function () {
-            console.log('save clicked...but is it doing anything?', this.getView().getModel());
-			this.getView().getModel().submitBatch();
-		},
-        onResetChanges : function () {
-            console.log('reset Changes To be created still');
-        },
+        
         //NAVIGATION 
         onPress: function (oEvent) {
             var oItem = oEvent.getSource();

@@ -6,7 +6,6 @@ sap.ui.define([
 
         return Controller.extend("freestyle.capm.controller.Employees", {
             onInit: function () {
-
             }
         });
     });
