@@ -14,26 +14,51 @@
 		</headerContent>
 		<content>
 			<HeaderContainer>
-				<layout:HorizontalLayout>
+			
+				<layout:HorizontalLayout id="information" visible="true">
 					<layout:VerticalLayout class="sapUiMediumMarginEnd">
 						<Label text="Name" design="Bold" />
-						<Input value="{name}" valueLiveUpdate="true" liveChange="onInputChange" />
-						<Label text="Department" design="Bold" />
-						<Input value="{department}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Title text="{name}" />
+					</layout:VerticalLayout>
+					<layout:VerticalLayout class="sapUiMediumMarginEnd">
 						<Label text="Title" design="Bold" />
-						<Input value="{title}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Text text="{title}" />
 						<Label text="Role" design="Bold" />
-						<Input value="{role}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Text text="{role}" />
+					</layout:VerticalLayout>
+					<layout:VerticalLayout class="sapUiMediumMarginEnd">						
+						<Label text="Start Date" design="Bold" />
+						<Text text="{startDate}" />
+						<Label text="Email" design="Bold" />
+						<Text text="{email}" />
+					</layout:VerticalLayout>
+					<layout:VerticalLayout class="sapUiMediumMarginEnd">
+						<Label text="Direct Report" design="Bold" />
+						<Text text="{directReport}" />
+						<Label text="Department" design="Bold" />
+						<Text text="{department}" />
+					</layout:VerticalLayout>
+				</layout:HorizontalLayout>
+				<layout:HorizontalLayout id="inputs" visible="falsef">
+					<layout:VerticalLayout class="sapUiMediumMarginEnd">
+						<Label text="Name" design="Bold" />
+						<Input value="{name}" editable="{detailView>/editMode}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Label text="Department" design="Bold" />
+						<Input value="{department}" editable="{detailView>/editMode}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Label text="Title" design="Bold" />
+						<Input value="{title}" editable="{detailView>/editMode}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Label text="Role" design="Bold" />
+						<Input value="{role}" editable="{detailView>/editMode}" valueLiveUpdate="true" liveChange="onInputChange" />
 					</layout:VerticalLayout>
 					<layout:VerticalLayout class="sapUiMediumMarginEnd">
 						<Label text="Industry" design="Bold" />
-						<Input value="{industry}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Input value="{industry}" editable="{detailView>/editMode}" valueLiveUpdate="true" liveChange="onInputChange" />
 						<Label text="Direct Report" design="Bold" />
-						<Input value="{directReport}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Input value="{directReport}" editable="{detailView>/editMode}" valueLiveUpdate="true" liveChange="onInputChange" />
 						<Label text="Start Date" design="Bold" />
-						<DatePicker value="{startDate}" valueFormat="yyyy-MM-dd" change="handleChange" valueLiveUpdate="true" liveChange="onInputChange" />
+						<DatePicker value="{startDate}" editable="{detailView>/editMode}" valueFormat="yyyy-MM-dd" change="handleChange" valueLiveUpdate="true" liveChange="onInputChange" />
 						<Label text="Email" design="Bold" />
-						<Input value="{email}" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Input value="{email}" editable="{detailView>/editMode}" valueLiveUpdate="true" liveChange="onInputChange" />
 					</layout:VerticalLayout>
 				</layout:HorizontalLayout>
 			</HeaderContainer>

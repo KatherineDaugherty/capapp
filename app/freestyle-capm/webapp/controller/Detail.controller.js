@@ -41,28 +41,25 @@ sap.ui.define([
 			}
 		},
 		onEditEmployee: function (oEvent) {
-			// oViewModel = this.getModel("detailView"),
-			// oViewModel.setProperty("/editMode", true),
+			oViewModel = this.getModel("detailView"),
+			oViewModel.setProperty("/editMode", true),
 			console.log('pressed onEditEmployee');
 		},
 		onResetChanges: function () {
-			// oViewModel = this.getModel("detailView"),
-			// oViewModel.setProperty("/editMode", false),
+			oViewModel = this.getModel("detailView"),
+			oViewModel.setProperty("/editMode", false),
 			this.getView().getModel().resetChanges('employeeGroup');
 
 			console.log('pressed onCancelChanges');
 		},
-		
 		// onDeleteEmployee: function () {
 		// 	console.log('pressed delete employee');
 		// },
 		onSaveEmployee: function () {
 			this.getView().getModel().submitBatch("employeeGroup");
 			console.log('pressed Save');
-
-
-			// oViewModel = this.getModel("detailView"),
-			// oViewModel.setProperty("/editMode", false)
+			oViewModel = this.getModel("detailView"),
+			oViewModel.setProperty("/editMode", false)
 		},
 		// onAddSkill: function () {
 		// 	console.log('clicked add Skill');
