@@ -1,3 +1,3 @@
 ID;name;department;title;role;industry;directReport;startDate;email
-0d774d94-f003-44fb-8fbf-0cb69d73a786;Jane Doe;DevOps;Junior Developer;UX Developer;Manufacturing;Director of DevOps;3/4/20;janesmith@mindsetconsulting.com
-2be16cf4-4d30-4e7f-b408-098266e6e36d;John Smith;Finance;Director of Finance;Director of Finance;Financial Services;VP of Finance;1/1/22;johnsmith@mindsetconsulting.com
+0d774d94-f003-44fb-8fbf-0cb69d73a786;Jane Doe;DevOps;Junior Developer;UX Developer;Manufacturing;Director of DevOps;2020-12-12;janesmith@mindsetconsulting.com
+2be16cf4-4d30-4e7f-b408-098266e6e36d;John Smith;Finance;Director of Finance;Director of Finance;Financial Services;VP of Finance;1997-10-08;johnsmith@mindsetconsulting.com
