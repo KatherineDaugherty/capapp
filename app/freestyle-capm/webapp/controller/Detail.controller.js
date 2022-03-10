@@ -11,13 +11,11 @@ sap.ui.define([
 		onInit: function () {
 			var oRouter = this.getOwnerComponent().getRouter();
 			oRouter.getRoute("detail").attachPatternMatched(this._onObjectMatched, this);
-
 			var oViewModel = new JSONModel({
 				editMode : false
 			});
 			this.getView().setModel(oViewModel, "detailView");
 			this.oEditAction = this.byId("editAction");
-
 		},
 		_onObjectMatched: function (oEvent) {
 			this.getView().bindElement({
@@ -41,14 +39,18 @@ sap.ui.define([
 			}
 		},
 		onEditEmployee: function (oEvent) {
-			oViewModel = this.getModel("detailView"),
+			var oViewModel = this.getView().getModel("detailView");
 			oViewModel.setProperty("/editMode", true),
+			this.byId("information").setProperty("visible", false);
+            this.byId("inputs").setProperty("visible", true);
 			console.log('pressed onEditEmployee');
 		},
 		onResetChanges: function () {
-			oViewModel = this.getModel("detailView"),
+			var oViewModel = this.getView().getModel("detailView");
 			oViewModel.setProperty("/editMode", false),
 			this.getView().getModel().resetChanges('employeeGroup');
+			this.byId("information").setProperty("visible", true);
+            this.byId("inputs").setProperty("visible", false);
 
 			console.log('pressed onCancelChanges');
 		},
@@ -58,8 +60,12 @@ sap.ui.define([
 		onSaveEmployee: function () {
 			this.getView().getModel().submitBatch("employeeGroup");
 			console.log('pressed Save');
-			oViewModel = this.getModel("detailView"),
+			var oViewModel = this.getView().getModel("detailView");
 			oViewModel.setProperty("/editMode", false)
+
+			this.byId("information").setProperty("visible", true);
+            this.byId("inputs").setProperty("visible", false);
+
 		},
 		// onAddSkill: function () {
 		// 	console.log('clicked add Skill');

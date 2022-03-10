@@ -14,7 +14,6 @@
 		</headerContent>
 		<content>
 			<HeaderContainer>
-			
 				<layout:HorizontalLayout id="information" visible="true">
 					<layout:VerticalLayout class="sapUiMediumMarginEnd">
 						<Label text="Name" design="Bold" />
@@ -26,7 +25,7 @@
 						<Label text="Role" design="Bold" />
 						<Text text="{role}" />
 					</layout:VerticalLayout>
-					<layout:VerticalLayout class="sapUiMediumMarginEnd">						
+					<layout:VerticalLayout class="sapUiMediumMarginEnd">
 						<Label text="Start Date" design="Bold" />
 						<Text text="{startDate}" />
 						<Label text="Email" design="Bold" />
@@ -39,7 +38,7 @@
 						<Text text="{department}" />
 					</layout:VerticalLayout>
 				</layout:HorizontalLayout>
-				<layout:HorizontalLayout id="inputs" visible="falsef">
+				<layout:HorizontalLayout id="inputs" visible="false">
 					<layout:VerticalLayout class="sapUiMediumMarginEnd">
 						<Label text="Name" design="Bold" />
 						<Input value="{name}" editable="{detailView>/editMode}" valueLiveUpdate="true" liveChange="onInputChange" />
