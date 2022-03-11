@@ -4,13 +4,8 @@
 	<Page id="idPage" title=" Details Page" floatingFooter="true" showNavButton="true" navButtonPress=".onNavBack" icon="sap-icon://add-favorite">
 		<headerContent>
 			<Button id="editEmployeeButton" icon="sap-icon://edit" text="Edit Employee" press=".onEditEmployee" />
-			<!-- <Button 
-				id="DeleteEmployeeBtn" 
-				text="Delete Employee" 
-				icon="sap-icon://delete" 
-				press=".onDeleteEmployee"/>  -->
-			<Button id="saveButton" type="Emphasized" text="{i18n>saveButtonText}" press=".onSaveEmployee" />
-			<Button id="resetButton" text="{i18n>cancelButtonText}" press=".onResetChanges" />
+			<Button id="saveButton" visible ="false" type="Emphasized" text="{i18n>saveButtonText}" press=".onSaveEmployee" />
+			<Button id="resetButton" visible ="false" text="{i18n>cancelButtonText}" press=".onResetChanges" />
 		</headerContent>
 		<content>
 			<HeaderContainer>

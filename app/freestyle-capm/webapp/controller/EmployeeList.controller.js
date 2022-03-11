@@ -20,7 +20,6 @@ sap.ui.define([
             oContext.created().then(function (oEvent) {
                 oRouter.navTo("detail", {
                     employeePath: window.encodeURIComponent((oContext.getPath().substring(("/Employees(".length), oContext.getPath().length-1)))
-                    // employeePath: oContext.getPath()
                 });
             }, function (oError) {
             });
@@ -29,7 +28,6 @@ sap.ui.define([
             console.log('oContext', oContext);
         },
         onDelete : function () {
-            
 			var oSelected = this.byId("idEmployeeTable").getSelectedItem();
 
 			if (oSelected) {

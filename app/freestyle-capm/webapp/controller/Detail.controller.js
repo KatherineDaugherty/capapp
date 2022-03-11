@@ -25,7 +25,6 @@ sap.ui.define([
 				}	
 			});
 			console.log('in object', window.decodeURIComponent(oEvent.getParameter("arguments").employeePath));
-
 		},
 		onNavBack: function () {
 			var oHistory = History.getInstance();
@@ -43,7 +42,9 @@ sap.ui.define([
 			oViewModel.setProperty("/editMode", true),
 			this.byId("information").setProperty("visible", false);
             this.byId("inputs").setProperty("visible", true);
-			console.log('pressed onEditEmployee');
+			this.byId("saveButton").setProperty("visible", true);
+			this.byId("resetButton").setProperty("visible", true);
+			this.byId("editEmployeeButton").setProperty("visible", false);
 		},
 		onResetChanges: function () {
 			var oViewModel = this.getView().getModel("detailView");
@@ -51,12 +52,10 @@ sap.ui.define([
 			this.getView().getModel().resetChanges('employeeGroup');
 			this.byId("information").setProperty("visible", true);
             this.byId("inputs").setProperty("visible", false);
-
-			console.log('pressed onCancelChanges');
+			this.byId("saveButton").setProperty("visible", false);
+			this.byId("resetButton").setProperty("visible", false);
+			this.byId("editEmployeeButton").setProperty("visible", true);
 		},
-		// onDeleteEmployee: function () {
-		// 	console.log('pressed delete employee');
-		// },
 		onSaveEmployee: function () {
 			this.getView().getModel().submitBatch("employeeGroup");
 			console.log('pressed Save');
@@ -65,7 +64,9 @@ sap.ui.define([
 
 			this.byId("information").setProperty("visible", true);
             this.byId("inputs").setProperty("visible", false);
-
+			this.byId("saveButton").setProperty("visible", false);
+			this.byId("resetButton").setProperty("visible", false);
+			this.byId("editEmployeeButton").setProperty("visible", true);
 		},
 		// onAddSkill: function () {
 		// 	console.log('clicked add Skill');
