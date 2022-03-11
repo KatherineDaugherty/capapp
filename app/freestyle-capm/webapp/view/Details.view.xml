@@ -64,7 +64,7 @@
 
 				<Panel headerText= "Add New Skills" expandable="true" expanded="false">
 					<content>
-					<Button id="skillButton" icon="sap-icon://add-favorite" tooltip="Add Skill" text="Add Employee Skill" press="onAddSkill" />
+					<Button id="skillButton" icon="sap-icon://add-favorite" tooltip="Add Skill" text="Add Employee Skill" press="onOpenSkillDialog" />
 					<Button icon="sap-icon://delete" tooltip="Delete Skill" text="Delete Employee Skill" type="Transparent" press="onDeleteSkill" />
 				</content>
 				</Panel>
@@ -83,7 +83,7 @@
 					</f:layoutXS>
 
 					<f:items>
-						<GenericTile header="{skill/skill}" subheader="{skill/type}">
+						<GenericTile header="{skill/skill}" subheader="{skill/type}" >
 							<layoutData>
 								<f:GridContainerItemLayoutData minRows="2" columns="2" />
 							</layoutData>

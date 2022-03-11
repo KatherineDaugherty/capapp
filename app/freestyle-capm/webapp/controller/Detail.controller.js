@@ -5,6 +5,7 @@ sap.ui.define([
 	"sap/ui/core/Fragment",
 	"sap/ui/core/Core"
 
+
 ], function (Controller, JSONModel, History, Fragment, Core) {
 	"use strict";
 	return Controller.extend("freestyle.capm.controller.Detail", {
@@ -70,9 +71,20 @@ sap.ui.define([
 		},
 		onAddSkill: function () {
 			console.log('clicked add Skill');
+			onOpenSkillDialog();
 		},
 		onDeleteSkill: function () {
 			console.log('delete clicked');
+		},
+		// onTilePress: function(){
+		// 	console.log('tile pressed');
+		// }
+
+		onOpenSkillDialog : function () {
+			if (!this.addSkillDialog) {
+				this.addSkillDialog = this.getView().byId("addSkillDialog")
+			}
+			this.addSkillDialog.open();
 		}
 	});
 });
