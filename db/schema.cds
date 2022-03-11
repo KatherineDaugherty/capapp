@@ -14,8 +14,6 @@ entity Employees : managed {
       email        : String(100);
       skills       : Association to Skills2Employees on skills.employee = $self;
 }
-
-
 entity Skills : managed {
   key ID          : UUID @(Core.Computed);
       skill       : String;
@@ -23,11 +21,10 @@ entity Skills : managed {
       institution : String;
       employees   : Association to many Skills2Employees on employees.skill = $self;
 }
-
 entity Skills2Employees : managed {
   key ID           : UUID @(Core.Computed);
       skill        : Association to one Skills;
-      employee     : Association to one Employees;
+      employee     : Association to one Employees @assert.integrity : false;
       dateAcquired : Date;
       renewal      : String;
       comfortLevel : Integer;

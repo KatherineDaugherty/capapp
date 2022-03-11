@@ -8,7 +8,7 @@
 			<Button id="resetButton" visible ="false" text="{i18n>cancelButtonText}" press=".onResetChanges" />
 		</headerContent>
 		<content>
-			<HeaderContainer>
+			<HeaderContainer backgroundDesign="Solid">
 				<layout:HorizontalLayout id="information" visible="true">
 					<layout:VerticalLayout class="sapUiMediumMarginEnd">
 						<Label text="Name" design="Bold" />
@@ -58,6 +58,12 @@
 			</HeaderContainer>
 
 			<ScrollContainer height="100%" width="100%" vertical="true">
+					<!-- <Button 
+				id="skillButton" 
+				icon="sap-icon://add-favorite" 
+				tooltip="Add Skills" 
+				text="Add Employee Skillz" 
+				press= "addSkill"/> -->
 				<f:GridContainer id="grid1" class="sapUiSmallMargin" snapToRow="true" items="{
                     path: 'skills',
 					parameters : {
@@ -89,22 +95,7 @@
 						</GenericTile>
 					</f:items>
 				</f:GridContainer>
-				<!-- <Button 
-				id="skillButton" 
-				icon="sap-icon://add-favorite" 
-				tooltip="Add Skills" 
-				text="Add Employee Skillz" 
-				press= "addSkill"/> -->
 			</ScrollContainer>
-
-			<!-- <footer>
-			<OverflowToolbar>
-				<ToolbarSpacer/>
-				<Button type="Accept" text="Save"/>
-				<Button type="Reject" text="Cancel"/>
-			</OverflowToolbar>
-		</footer> -->
-
 		</content>
 	</Page>
 
