@@ -10,7 +10,7 @@ entity Employees : managed {
       role         : String(100);
       industry     : String(100);
       directReport : String(100);
-      startDate    : Date;
+      startDate    : String;
       email        : String(100);
       skills       : Association to Skills2Employees on skills.employee = $self;
 }
@@ -25,7 +25,7 @@ entity Skills2Employees : managed {
   key ID           : UUID @(Core.Computed);
       skill        : Association to one Skills;
       employee     : Association to one Employees @assert.integrity : false;
-      dateAcquired : Date;
+      dateAcquired : String;
       renewal      : String;
       comfortLevel : Integer;
 }

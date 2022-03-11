@@ -1,4 +1,4 @@
-<mvc:View controllerName="freestyle.capm.controller.employeeList" xmlns="sap.m" xmlns:f="sap.f" xmlns:mvc="sap.ui.core.mvc">
+<mvc:View controllerName="freestyle.capm.controller.employeeList" xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
 
     <Table id="idEmployeeTable" autoPopinMode="true" contextualWidth="Auto" growing="true" items="{/Employees}" mode="SingleSelectLeft">
 

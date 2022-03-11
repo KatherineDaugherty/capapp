@@ -50,7 +50,7 @@
 						<Label text="Direct Report" design="Bold" />
 						<Input value="{directReport}" editable="{detailView>/editMode}" valueLiveUpdate="true" liveChange="onInputChange" />
 						<Label text="Start Date" design="Bold" />
-						<DatePicker value="{startDate}" editable="{detailView>/editMode}" valueFormat="yyyy-MM-dd" change="handleChange" valueLiveUpdate="true" liveChange="onInputChange" />
+						<Input value="{startDate}" editable="{detailView>/editMode}" valueLiveUpdate="true" liveChange="onInputChange" />
 						<Label text="Email" design="Bold" />
 						<Input value="{email}" editable="{detailView>/editMode}" valueLiveUpdate="true" liveChange="onInputChange" />
 					</layout:VerticalLayout>
