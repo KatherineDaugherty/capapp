@@ -1,9 +1,11 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
+    "sap/m/MessageToast",
+	"sap/m/MessageBox",
     "sap/ui/core/Fragment",
     "sap/ui/core/Core"
 
-], function (Controller, Fragment, Core) {
+], function (Controller, MessageToast, MessageBox, Fragment, Core) {
     "use strict";
 
     return Controller.extend("freestylecapm.controller.EmployeeList", {
@@ -26,6 +28,18 @@ sap.ui.define([
             console.log('employeeBinding', employeeBinding);
             console.log('oContext', oContext);
         },
+        onDelete : function () {
+            
+			var oSelected = this.byId("idEmployeeTable").getSelectedItem();
+
+			if (oSelected) {
+				oSelected.getBindingContext().delete("$auto").then(function () {
+					MessageToast.show(this._getText("deletionSuccessMessage"));
+				}.bind(this), function (oError) {
+					MessageBox.error(oError.message);
+				});
+			}
+		},
         onPress: function (oEvent) {
             var oItem = oEvent.getSource();
             var oRouter = this.getOwnerComponent().getRouter();
