@@ -4,8 +4,8 @@
 	<Page id="idPage" title=" Details Page" floatingFooter="true" showNavButton="true" navButtonPress=".onNavBack" icon="sap-icon://add-favorite">
 		<headerContent>
 			<Button id="editEmployeeButton" icon="sap-icon://edit" text="Edit Employee" press=".onEditEmployee" />
-			<Button id="saveButton" visible ="false" type="Emphasized" text="{i18n>saveButtonText}" press=".onSaveEmployee" />
-			<Button id="resetButton" visible ="false" text="{i18n>cancelButtonText}" press=".onResetChanges" />
+			<Button id="saveButton" visible="false" type="Emphasized" text="{i18n>saveButtonText}" press=".onSaveEmployee" />
+			<Button id="resetButton" visible="false" text="{i18n>cancelButtonText}" press=".onResetChanges" />
 		</headerContent>
 		<content>
 			<HeaderContainer backgroundDesign="Solid">
@@ -33,6 +33,8 @@
 						<Text text="{department}" />
 					</layout:VerticalLayout>
 				</layout:HorizontalLayout>
+
+
 				<layout:HorizontalLayout id="inputs" visible="false">
 					<layout:VerticalLayout class="sapUiMediumMarginEnd">
 						<Label text="Name" design="Bold" />
@@ -58,12 +60,15 @@
 			</HeaderContainer>
 
 			<ScrollContainer height="100%" width="100%" vertical="true">
-					<!-- <Button 
-				id="skillButton" 
-				icon="sap-icon://add-favorite" 
-				tooltip="Add Skills" 
-				text="Add Employee Skillz" 
-				press= "addSkill"/> -->
+
+
+				<Panel headerText= "Add New Skills" expandable="true" expanded="false">
+					<content>
+					<Button id="skillButton" icon="sap-icon://add-favorite" tooltip="Add Skill" text="Add Employee Skill" press="onAddSkill" />
+					<Button icon="sap-icon://delete" tooltip="Delete Skill" text="Delete Employee Skill" type="Transparent" press="onDeleteSkill" />
+				</content>
+				</Panel>
+
 				<f:GridContainer id="grid1" class="sapUiSmallMargin" snapToRow="true" items="{
                     path: 'skills',
 					parameters : {
@@ -85,9 +90,9 @@
 							<TileContent>
 								<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
 									<VBox>
-										<Label text="Date Acquired" />
+										<Label text="Date Acquired" design="Bold" />
 										<Label text="{dateAcquired}" />
-										<Label text="Comfort Level" />
+										<Label text="Comfort Level" design="Bold" />
 										<ProgressIndicator percentValue="{comfortLevel}" state="Success" displayValue="{comfortLevel}" />
 									</VBox>
 								</layout:VerticalLayout>

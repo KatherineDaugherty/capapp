@@ -68,8 +68,11 @@ sap.ui.define([
 			this.byId("resetButton").setProperty("visible", false);
 			this.byId("editEmployeeButton").setProperty("visible", true);
 		},
-		// onAddSkill: function () {
-		// 	console.log('clicked add Skill');
-		// }
+		onAddSkill: function () {
+			console.log('clicked add Skill');
+		},
+		onDeleteSkill: function () {
+			console.log('delete clicked');
+		}
 	});
 });
