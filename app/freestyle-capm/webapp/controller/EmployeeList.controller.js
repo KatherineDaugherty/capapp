@@ -3,7 +3,6 @@ sap.ui.define([
     "sap/ui/core/Fragment",
     "sap/ui/core/Core"
 
-
 ], function (Controller, Fragment, Core) {
     "use strict";
 
@@ -18,25 +17,15 @@ sap.ui.define([
             var oContext = employeeBinding.create({});
             oContext.created().then(function (oEvent) {
                 oRouter.navTo("detail", {
-                    // employeePath: window.encodeURIComponent((oItem.getBindingContext().getProperty("ID")))
-                        employeePath : oContext.getPath()
+                    employeePath: window.encodeURIComponent((oContext.getPath().substring(("/Employees(".length), oContext.getPath().length-1)))
+                    // employeePath: oContext.getPath()
                 });
             }, function (oError) {
             });
 
             console.log('employeeBinding', employeeBinding);
             console.log('oContext', oContext);
-
-            // employeeList.getItems().some(function (oItem) {
-            //     if (oItem.getBindingContext() === oContext) {
-            //         oItem.focus();
-            //         oItem.setSelected(true);
-            //         return true;
-            //     }
-            // });
         },
-
-        //NAVIGATION 
         onPress: function (oEvent) {
             var oItem = oEvent.getSource();
             var oRouter = this.getOwnerComponent().getRouter();
